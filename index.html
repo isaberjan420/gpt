@@ -208,7 +208,7 @@
                     type="password" 
                     id="apiKeyInput" 
                     class="api-key-input" 
-                    placeholder="API ANAHTARINI GIRIN"
+                    placeholder="API ANAHTARINI GIRINIZ"
                     value="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"
                 >
                 <button id="saveApiKey">Save API Key</button>
@@ -228,7 +228,7 @@
                 <input 
                     type="text" 
                     id="userInput" 
-                    placeholder="Type your message..." 
+                    placeholder="Konuş" 
                     disabled
                 >
                 <button type="submit" id="sendButton" disabled>
@@ -348,7 +348,7 @@
                 
                 if (!response.ok) {
                     const errorData = await response.json();
-                    throw new Error(errorData.error?.message || 'Failed to get response from OpenAI');
+                    throw new Error(errorData.error?.message || 'Hata');
                 }
                 
                 const data = await response.json();
@@ -357,7 +357,7 @@
                 addMessage('assistant', assistantMessage);
             } catch (error) {
                 console.error('Error:', error);
-                showError(error.message || 'An error occurred while chatting with GPT');
+                showError(error.message || 'Hata');
             } finally {
                 setLoading(false);
             }
